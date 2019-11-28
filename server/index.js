@@ -13,7 +13,7 @@ app.post('/template/save', function (req, res) {
     setTimeout(() => {
         try {
             const data = JSON.stringify(req.body.design);
-            const filePath = path.resolve(__dirname, './results', './template.json');
+            const filePath = path.resolve(__dirname, './template.json');
             fs.writeFileSync(filePath, data, function (err) {
                 if (err) throw err;
                 console.log('Template JSON File is created successfully.');
@@ -28,7 +28,7 @@ app.post('/template/save', function (req, res) {
 
 app.post('/export', function (req, res) {
     try {
-        const filePath = path.resolve(__dirname, './results', './exported.htm');
+        const filePath = path.resolve(__dirname, './exported.htm');
         fs.writeFileSync(filePath, req.body.html, function (err) {
             if (err) throw err;
             console.log('Exported HTML file is created successfully.');
